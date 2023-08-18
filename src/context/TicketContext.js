@@ -7,8 +7,8 @@ export function useFilterContext() {
 }
 
 export function FilterProvider({ children }) {
-  const [groupingBy, setGroupingBy] = useState("");
-  const [orderingBy, setOrderingBy] = useState("");
+  const [groupingBy, setGroupingBy] = useState("status");
+  const [orderingBy, setOrderingBy] = useState("title");
 
   const contextValue = {
     groupingBy,

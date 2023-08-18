@@ -29,3 +29,10 @@
     font-size: 13px;
     text-transform: none;    
   }
+
+  .ticketTitleDesc {
+    display: flex;
+    flex-direction: start;
+    justify-content: start;
+    gap: 5px;
+  }

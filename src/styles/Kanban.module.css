@@ -2,10 +2,34 @@
 
 .container {
   display: flex;
-
+  padding: 10px;
   justify-content: space-between;
   margin: 20px;
   overflow-y: scroll;
+  gap: 25px
+}
+
+.ticketHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(86, 86, 86);
+    font-size: 20px;
+}
+
+.ticketIcons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: rgb(136, 136, 136);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
 }
 
 .group {

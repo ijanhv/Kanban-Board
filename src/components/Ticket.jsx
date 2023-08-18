@@ -7,8 +7,9 @@ const Ticket = ({ ticket }) => {
       <h3 className={styles.ticketTitle}>
         {ticket.id}
       </h3>
-        <p className={styles.ticketDesc}>{ticket.title}</p>
-
+        <div className={styles.ticketTitleDesc}>
+          <input type="radio" /><p className={styles.ticketDesc}>{ticket.title}</p>
+        </div>
     </div>
   );
 };
