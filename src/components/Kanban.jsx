@@ -102,7 +102,7 @@ const Kanban = () => {
 
       <div className={styles.container} style={{ overflow: 'scroll' }}>
         {Object.keys(groupedAndOrderedData).map((groupKey) => {
-          const user = cardData.users.find((user) => user.id === groupKey); // Find the user object by matching user ID
+          const user = cardData.users.find((user) => user.id === groupKey); 
           const displayName = user ? user.name : groupKey;
           const ticketCount = groupedAndOrderedData[groupKey].length;
 
