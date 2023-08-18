@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import styles from "../styles/DropDown.module.css"
 import { AdjustmentsHorizontalIcon, ChevronDownIcon} from "@heroicons/react/24/outline";
+import { useFilterContext } from "../context/TicketContext";
 
 
 const DropDown = () => {
+  const { groupingBy, setGroupingBy, orderingBy, setOrderingBy } = useFilterContext();
+  
+
   const [open, setOpen] = useState(false);
 
   const toggleDropDown = () => {

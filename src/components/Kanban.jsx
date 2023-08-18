@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../styles/Kanban.module.css"
+import Ticket from "./Ticket";
 
 const Kanban = () => {
   const [cardData, setCardData] = useState([]);
@@ -68,13 +69,12 @@ const Kanban = () => {
     fetchData();
   }, []);
 
- 
 
 
 
   const handleFilter = async () => {
     if(cardData && cardData.tickets && isDataFetched) {
-        const groupedAndOrdered = await groupAndOrderTickets("userId", "Priority", cardData.tickets);
+        const groupedAndOrdered = await groupAndOrderTickets("priority", "Priority", cardData.tickets);
         console.log("function", groupedAndOrdered);
         setGroupedAndOrderedData(groupedAndOrdered); 
 
@@ -91,19 +91,16 @@ const Kanban = () => {
     }
 
 
-<div className={styles.container}>
+  <div className={styles.container}>
   {Object.keys(groupedAndOrderedData).map((groupKey) => (
     <div key={groupKey} className={styles.group}>
-      <h2 className={styles.groupHeader}>HELLO {groupKey}</h2>
+      <h2 className={styles.groupHeader}>{groupKey === 0 ? 'No Priority'
+       ? 1 : 'Low'
+      : groupKey}</h2>
       <ul className={styles.ticketList}>
         {groupedAndOrderedData[groupKey].map((ticket) => (
-          <li key={ticket.id} className={styles.ticket}>
-            <p className={styles.ticketTitle}>
-              <span className={styles.ticketPriority}>
-                Title: {ticket.title} - Priority: {ticket.priority}
-              </span>
-            </p>
-          </li>
+      
+          <Ticket ticket={ticket} key={ticket.id} />
         ))}
       </ul>
     </div>
