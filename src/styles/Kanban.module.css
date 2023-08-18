@@ -5,9 +5,25 @@
   padding: 10px;
   justify-content: space-between;
   margin: 20px;
-  overflow-y: scroll;
-  gap: 25px
+  overflow: hidden;
+
+  gap: 25px;
+  max-width: 100%;   
 }
+.avatar {
+  color: firebrick;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    align-items: stretch; 
+    overflow-x: hidden;
+  }
+}
+
+
+
 
 .ticketHeader {
     display: flex;
@@ -17,6 +33,11 @@
     font-size: 20px;
 }
 
+.ticketCount {
+    font-size: 15px;
+    font-weight: 200;
+    color: rgb(136, 136, 136);
+}
 .ticketIcons {
     display: flex;
     align-items: center;
@@ -38,8 +59,12 @@
 }
 
 .groupHeader {
-  font-size: 18px;
+  font-size: 12px;
   margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  align-items: center;
 }
 
 .ticketList {

@@ -1,15 +1,14 @@
-
-
 .navbar {
-    height: 64px; /* Adjust height as needed */
-    background-color: white;
-  }
-  
-  .navbarContent {
-    padding: 16px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+  height: 64px; 
+  background-color: white;
+  width: 100%;
+
+}
+
+.navbarContent {
+  z-index: 100;
+
+  padding: 20px 30px;
+  margin: 0 auto;
+}
   

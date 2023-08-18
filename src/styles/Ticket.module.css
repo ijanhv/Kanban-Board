@@ -1,14 +1,14 @@
 .ticket {
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 8px;
-    padding-bottom: 30px;
+    padding: 10px;
+    padding-bottom: 35px;
     margin-bottom: 10px;
     background-color: #f9f9f9;  
     filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
-    height: 80px;    
-    place-items: center;
-    
+    height: 100px;    
+    place-items: center; 
+    width: 100%;
   }
   
   .ticketTitle {
@@ -16,8 +16,46 @@
     font-weight: bold;
     text-transform: uppercase;
     color: rgb(161, 161, 161);
+    margin-bottom: 0;
+  }
+
+  .ticketBottom {
+    margin-left: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center; 
+    
+  }
+
+  .ticketAvatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+  }
+
+  .ticketTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .ticketBadgeContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    align-items: center;
+
   }
   
+  .exclamationIcon {
+    font-size: 14px; 
+    color: #a8a8a8; 
+    margin-right: 5px; 
+  }
+
   .ticketPriority {
     font-weight: normal;
     font-size: 14px;
@@ -28,6 +66,7 @@
     color: black;
     font-size: 13px;
     text-transform: none;    
+    gap: 2px;
   }
 
   .ticketTitleDesc {
@@ -35,4 +74,22 @@
     flex-direction: start;
     justify-content: start;
     gap: 5px;
+    overflow: hidden; 
+    font-size: 14px;
+  }
+
+  .ticketBadge {
+    border: #d6d6d6 1px solid;
+    filter: drop-shadow(0 0.5px 1px rgba(98, 98, 98, 0.05));
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 3px;
+
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
   }

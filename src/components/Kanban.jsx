@@ -4,8 +4,10 @@ import styles from "../styles/Kanban.module.css";
 import Ticket from "./Ticket";
 import { useFilterContext } from "../context/TicketContext";
 import { AiOutlinePlus } from "react-icons/ai";
+import { RxAvatar } from "react-icons/rx";
 
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+import IconComponent from "./IconComponent";
 
 const Kanban = () => {
   const [cardData, setCardData] = useState([]);
@@ -18,6 +20,12 @@ const Kanban = () => {
   console.log("orderingBy", orderingBy);
 
   const groupAndOrderTickets = async (groupingBy, orderingBy, tickets) => {
+    const groupingIcons = [
+
+      {'urgent': '<FcHighPriority/>'},
+
+
+    ]
     const groupedTickets = {};
 
     tickets.forEach((ticket) => {
@@ -92,15 +100,20 @@ const Kanban = () => {
         </div>
       )}
 
-      <div className={styles.container}>
+      <div className={styles.container} style={{ overflow: 'scroll' }}>
         {Object.keys(groupedAndOrderedData).map((groupKey) => {
           const user = cardData.users.find((user) => user.id === groupKey); // Find the user object by matching user ID
           const displayName = user ? user.name : groupKey;
+          const ticketCount = groupedAndOrderedData[groupKey].length;
 
           return (
             <div key={groupKey} className={styles.group}>
               <div className={styles.ticketHeader}>
                 <h2 className={styles.groupHeader}>
+                  {groupingBy === "userId" && <RxAvatar className={styles.avatar} />}
+                  {groupingBy === "priority" && (
+                    <IconComponent priority={groupKey} />
+                  )}
                   {groupKey === "0"
                     ? "No Priority"
                     : groupKey === "1"
@@ -114,6 +127,8 @@ const Kanban = () => {
                     : displayName
                     ? displayName
                     : groupKey}
+                    <span className={styles.ticketCount}> {ticketCount}</span> {/* Display the ticket count */}
+
                 </h2>
                 <div className={styles.ticketIcons}>
                   <AiOutlinePlus className={styles.plusIcon} />
