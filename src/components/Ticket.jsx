@@ -9,7 +9,7 @@ const Ticket = ({ ticket }) => {
   const truncatedTitle = ticket.title.length > 40
     ? ticket.title.substring(0, 40 ) + "..." 
     : ticket.title;
-  console.log("ticket", ticket);
+  // console.log("ticket", ticket);
   return (
     <div className={styles.ticket}>
       <div className={styles.ticketTop}>

@@ -16,16 +16,11 @@ const Kanban = () => {
   const { groupingBy, setGroupingBy, orderingBy, setOrderingBy } =
     useFilterContext();
 
-  console.log("groupingBy", groupingBy);
-  console.log("orderingBy", orderingBy);
+  // console.log("groupingBy", groupingBy);
+  // console.log("orderingBy", orderingBy);
 
   const groupAndOrderTickets = async (groupingBy, orderingBy, tickets) => {
-    const groupingIcons = [
-
-      {'urgent': '<FcHighPriority/>'},
-
-
-    ]
+ 
     const groupedTickets = {};
 
     tickets.forEach((ticket) => {
@@ -81,8 +76,8 @@ const Kanban = () => {
         orderingBy,
         cardData.tickets
       );
-      console.log(cardData.users);
-      console.log("function", groupedAndOrdered);
+      // console.log(cardData.users);
+      // console.log("function", groupedAndOrdered);
       setGroupedAndOrderedData(groupedAndOrdered);
     } else {
       console.log("Card data or tickets array is not available yet.");
